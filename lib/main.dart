@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:travel_app/provider/intro_page_provider.dart';
 import 'package:travel_app/routes.dart';
 import 'core/constants/color_constants.dart';
 import 'representation/screens/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (context) => ListenCurrentPage()),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
