@@ -94,9 +94,8 @@ class _IntroScreenState extends State<IntroScreen> {
                       // your preferred effect
                       onDotClicked: (index) {}),
                   ButtonWidget(() {
-                    print(_pageController.page);
                     _pageController.page as double > 1
-                        ? Navigator.pushNamed(context, HomeScreen.routeName)
+                        ? Navigator.pushNamed(context, MainScreen.routeName)
                         : _pageController.nextPage(
                             duration: const Duration(milliseconds: 200),
                             curve: Curves.easeIn,

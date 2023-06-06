@@ -1,13 +1,18 @@
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:travel_app/provider/home_screen_bottom_index.dart';
 import 'package:travel_app/provider/intro_page_provider.dart';
+import 'package:travel_app/representation/screens/main_screen.dart';
 import 'package:travel_app/routes.dart';
 import 'core/constants/color_constants.dart';
 import 'representation/screens/splash_screen.dart';
 
-void main() {
+void main() async{
+
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => ListenCurrentPage()),
+    ChangeNotifierProvider(create: (context) => HomeScreenBottomIndex())
   ], child: const MyApp()));
 }
 
