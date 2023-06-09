@@ -2,9 +2,9 @@ mixin AssetHelper {
   // //Assets in icons
   static const String icoOvalTop = 'assets/icons/ico_oval_top.png';
   static const String icoOvalBottom = 'assets/icons/ico_oval_bottom.png';
-  // static const String icoHotel = 'assets/icons/ico_hotel.png';
-  // static const String icoPlane = 'assets/icons/ico_plane.png';
-  // static const String icoHotelPlane = 'assets/icons/ico_hotel_plane.png';
+  static const String icoHotel = 'assets/icons/ico_hotel.png';
+  static const String icoPlane = 'assets/icons/ico_plane.png';
+  static const String icoHotelPlane = 'assets/icons/ico_hotel_plane.png';
   // static const String icoBed = 'assets/icons/ico_bed.png';
   // static const String icoCalendal = 'assets/icons/ico_calendal.png';
   // static const String icoLocation = 'assets/icons/ico_location.png';
