@@ -30,7 +30,8 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    waitSplashScreen(context);
+    //FIXME: uncomment if done App
+    // waitSplashScreen(context);
     return Stack(
       children: [
         Positioned.fill(

@@ -5,10 +5,11 @@ import 'package:travel_app/core/helpers/image_helper.dart';
 
 class AppBarContainerWidget extends StatelessWidget {
   const AppBarContainerWidget(
-      {super.key, required this.child, required this.title});
+      {super.key, required this.child,this.title,this.automaticallyImplyLeading=false});
 
   final Widget child;
-  final Widget title;
+  final Widget? title;
+  final bool automaticallyImplyLeading;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class AppBarContainerWidget extends StatelessWidget {
             title: title,
             toolbarHeight: 100,
             centerTitle: false,
-            automaticallyImplyLeading: false,
+            automaticallyImplyLeading: automaticallyImplyLeading,
             elevation: 0,
             backgroundColor: ColorPalette.backgroundScaffoldColor,
             flexibleSpace: Stack(
@@ -28,7 +29,7 @@ class AppBarContainerWidget extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                       color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(50),
                       )),
                 ),

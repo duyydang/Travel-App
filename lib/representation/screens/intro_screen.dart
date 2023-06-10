@@ -93,14 +93,18 @@ class _IntroScreenState extends State<IntroScreen> {
                           activeDotColor: Colors.orange),
                       // your preferred effect
                       onDotClicked: (index) {}),
-                  ButtonWidget(() {
-                    _pageController.page as double > 1
-                        ? Navigator.pushNamed(context, MainScreen.routeName)
-                        : _pageController.nextPage(
-                            duration: const Duration(milliseconds: 200),
-                            curve: Curves.easeIn,
-                          );
-                  }, context.watch<ListenCurrentPage>().text),
+                  ButtonWidget(
+                    onTap: () {
+                      _pageController.page as double > 1
+                          ? Navigator.pushNamed(context, MainScreen.routeName)
+                          : _pageController.nextPage(
+                              duration: const Duration(milliseconds: 200),
+                              curve: Curves.easeIn,
+                            );
+                    },
+                    title: 'context.watch<ListenCurrentPage>().text',
+                    horizontal: 35,
+                  ),
                 ],
               )
             ],

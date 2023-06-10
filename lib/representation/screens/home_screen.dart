@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/core/helpers/asset_helper.dart';
 import 'package:travel_app/core/helpers/image_helper.dart';
+import 'package:travel_app/representation/screens/hotel_booking_screen.dart';
 import 'package:travel_app/representation/widgets/app_bar_container.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -78,61 +79,62 @@ class HomeScreen extends StatelessWidget {
                     ),
                     hintText: 'Search your destination'),
               ),
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               //Row Item Hotel,Flights, All
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  //TODO: add Navigator.push sreen
-                  Column(
-                    children: [
-                      Container(
-                          margin: const EdgeInsets.all(5),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 28, vertical: 20),
-                          decoration: BoxDecoration(
-                              color: Colors.amberAccent.withOpacity(0.2),
-                              borderRadius: BorderRadius.circular(20)),
-                          child:
-                              ImageHelper.loadFromAsset(AssetHelper.icoHotel)),
-                      const Text('Hotels')
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                          margin: const EdgeInsets.all(5),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 28, vertical: 20),
-                          decoration: BoxDecoration(
-                              color: Colors.pinkAccent.withOpacity(0.1),
-                              borderRadius: BorderRadius.circular(20)),
-                          child:
-                              ImageHelper.loadFromAsset(AssetHelper.icoPlane)),
-                      const Text('Flights')
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                          margin: const EdgeInsets.all(5),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 12),
-                          decoration: BoxDecoration(
-                              color: Colors.greenAccent.withOpacity(0.2),
-                              borderRadius: BorderRadius.circular(20)),
-                          child: ImageHelper.loadFromAsset(
-                              AssetHelper.icoHotelPlane,
-                              width: 40,
-                              height: 40)),
-                      const Text('All')
-                    ],
-                  ),
+                  buildItemList(
+                      icon: ImageHelper.loadFromAsset(
+                        AssetHelper.icoHotel,
+                        width: 40,
+                        height: 40,
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, HotelBookingScreen.routeName);
+                      },
+                      text: 'Hotel'),
+                  buildItemList(
+                      icon: ImageHelper.loadFromAsset(
+                        AssetHelper.icoPlane,
+                        width: 40,
+                        height: 40,
+                      ),
+                      onTap: () {},
+                      text: 'Flights'),
+                  buildItemList(
+                      icon: ImageHelper.loadFromAsset(
+                        AssetHelper.icoHotelPlane,
+                        width: 40,
+                        height: 40,
+                      ),
+                      onTap: () {},
+                      text: 'All'),
                 ],
               )
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget buildItemList({required Widget icon, required Function() onTap, required String text}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Container(
+              margin: const EdgeInsets.all(5),
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 18),
+              decoration: BoxDecoration(
+                  color: Colors.amberAccent.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(20)),
+              child: icon),
+          Text(text)
+        ],
       ),
     );
   }

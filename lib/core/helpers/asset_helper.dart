@@ -5,9 +5,9 @@ mixin AssetHelper {
   static const String icoHotel = 'assets/icons/ico_hotel.png';
   static const String icoPlane = 'assets/icons/ico_plane.png';
   static const String icoHotelPlane = 'assets/icons/ico_hotel_plane.png';
-  // static const String icoBed = 'assets/icons/ico_bed.png';
-  // static const String icoCalendal = 'assets/icons/ico_calendal.png';
-  // static const String icoLocation = 'assets/icons/ico_location.png';
+  static const String icoBed = 'assets/icons/ico_bed.png';
+  static const String icoCalendal = 'assets/icons/ico_calendal.png';
+  static const String icoLocation = 'assets/icons/ico_location.png';
   // static const String icoLocationBlank = 'assets/icons/ico_location_blank.png';
   // static const String icoStar = 'assets/icons/ico_star.png';
   // static const String icoGuest = 'assets/icons/ico_guest.png';
